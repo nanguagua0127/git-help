@@ -1,0 +1,25 @@
+进入想要创建git仓库的文件路径：cd 文件路径
+初始化git仓库：git init 
+把git仓库工作区的文件添加到暂存区：git add .   (添加具体某个文件：git add index.html)提交
+把暂存区的修改正式提交给仓库：git commit -m "本次提交的说明"
+查看仓库当前的状态：git status
+查看某个文件的修改状态：git diff 文件名 (例如：git diff index.html)
+查看每一次的修改以及每次修改的版本号：git log
+单纯查看每次修改的版本号：git log --pretty=oneline
+回退到上一个版本：git reset --hard HEAD^
+回退到具体某个版本：git reset --hard 版本号
+查看每一次命令：git reflog
+丢弃工作区中尚未提交的修改：git checkout -- 文件名 (例如：git checkout -- index.html)
+  详解： 命令git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+
+         一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+
+         一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+
+         总之，就是让这个文件回到最近一次git commit或git add时的状态。
+         
+当把工作区的文件删除的时候(有两种方法1、直接文件夹中删除，2、命令行删除：rm 文件名)，如果确实要在版本库里删除：git rm 文件名 (例如：git rm index.html)，
+如果只是误删，不要担心，git checkout -- 删除的文件名(例如:git checkout -- index.html),这样就可以找回了^-^
+
+
+
